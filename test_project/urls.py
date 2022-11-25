@@ -1,5 +1,4 @@
-"""test_project URL Configuration
-
+"""render_project URL Configuration
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
 Examples:
@@ -15,7 +14,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.http import HttpResponse
+
+def helloworldfunc(request):
+    responseobject = HttpResponse('<h1>hello world 2022/11/25</h1>')
+    return responseobject
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', helloworldfunc),
 ]
